@@ -15,6 +15,10 @@ public class F2Activity extends AppCompatActivity {
     public void nextPage(View view) {
         Intent intent = new Intent(getApplicationContext(), F3Activity.class);
         startActivity(intent);
-        finish();
+       // finish();
+    }
+    public void backPage(View view){
+        Intent intent = new Intent(getApplicationContext(), F1Activity.class);
+        startActivity(intent);
     }
 }

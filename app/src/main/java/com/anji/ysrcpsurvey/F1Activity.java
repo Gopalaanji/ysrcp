@@ -16,6 +16,6 @@ public class F1Activity extends AppCompatActivity {
     public void nextPage(View view) {
         Intent intent = new Intent(getApplicationContext(), F2Activity.class);
         startActivity(intent);
-        finish();
+        //finish();
     }
 }

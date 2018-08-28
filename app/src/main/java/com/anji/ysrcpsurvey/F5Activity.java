@@ -12,9 +12,15 @@ public class F5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_f5);
     }
+
     public void nextPage(View view) {
         Intent intent = new Intent(getApplicationContext(), F6Activity.class);
         startActivity(intent);
-        finish();
+        // finish();
+    }
+
+    public void backPage(View view) {
+        Intent intent = new Intent(getApplicationContext(), F4Activity.class);
+        startActivity(intent);
     }
 }

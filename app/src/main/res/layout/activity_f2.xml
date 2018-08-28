@@ -102,19 +102,20 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="end"
-                                android:layout_marginRight="15dp"
+                                android:layout_marginLeft="30dp"
                                 android:layout_marginTop="10dp"
                                 android:background="@color/colorAccent"
-                                android:onClick="nextPage"
+                                android:onClick="backPage"
                                 android:text="@string/back"
                                 android:textColor="@color/white"
                                 android:textSize="14dp" />
-                            <Button
 
+                            <Button
                                 android:id="@+id/next_f2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="30dp"
                                 android:layout_marginTop="10dp"
                                 android:background="@color/colorAccent"
                                 android:onClick="nextPage"

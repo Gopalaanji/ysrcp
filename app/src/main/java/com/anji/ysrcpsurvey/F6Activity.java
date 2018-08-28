@@ -17,4 +17,9 @@ public class F6Activity extends AppCompatActivity {
     public void nextPage(View view) {
         Toast.makeText(this, "succusfully saved", Toast.LENGTH_SHORT).show();
     }
+
+    public void backPage(View view) {
+        Intent intent = new Intent(getApplicationContext(), F5Activity.class);
+        startActivity(intent);
+    }
 }

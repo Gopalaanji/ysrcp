@@ -47,7 +47,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/q1"
+                            android:text="@string/q6"
                             android:textSize="14dp" />
 
                         <RadioGroup
@@ -98,11 +98,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginRight="30dp"
                             android:layout_marginTop="10dp"
                             android:background="@color/colorAccent"
                             android:onClick="nextPage"
-                            android:text="@string/next"
+                            android:text="@string/save"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
                     </LinearLayout>
