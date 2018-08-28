@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">ysrcpsurvey</string>
+    <string name="app_name">YSRCP Survey</string>
 
     <string name="title_activity_login">Login</string>
     <string name="username">Name</string>
     <string name="mobile_login">Mobile NO</string>
     <string name="login">Login</string>
     <string name="hidername_login">YSRCP SURVEY</string>
-
 
 
     <string name="name">Name</string>
@@ -16,6 +15,14 @@
     <string name="female">Female</string>
     <string name="other">Other</string>
     <string name="address">Address</string>
+
+    <string name="assembly">Assembly Constituency</string>
+    <string name="dist">District</string>
+    <string name="village">Village</string>
+    <string name="tx1">Text1</string>
+    <string name="tx2">Text2</string>
+    <string name="tx3">Text3</string>
+    <string name="next">Next</string>
 
 
 </resources>

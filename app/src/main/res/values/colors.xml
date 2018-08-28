@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+
+    <color name="colorPrimary">#0065B5</color>
+    <color name="colorPrimaryDark">#00467e</color>
+    <color name="colorPrimarylight">#3383c3</color>
+    <color name="colorAccent">#33a570</color>
+    <color name="red">#ECA375</color>
+    <color name="white">#FEFEFE</color>
+
+
+
+
+    <!--green #008F4D-->
+    <!--blue 	#0065B5-->
+    <!--white #FEFEFE-->
+    <!--red 	#ECA375-->
+
+
+
+    <!--blue-->
+
+    <!--#00467e-->
+    <!--#0065B5-->
+    <!--#3383c3-->
+
+
+    <!--green-->
+
+
+    <!--#006435-->
+    <!--#008F4D-->
+    <!--#33a570-->
 </resources>
