@@ -1,7 +1,6 @@
 package com.anji.ysrcpsurvey;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RadioButton radioButton = (RadioButton) findViewById(selectedId);
         String radiostring = radioButton.getText().toString();
 
-        Intent intent = new Intent(getApplicationContext(), OptionActivity.class);
+        Intent intent = new Intent(getApplicationContext(), F1Activity.class);
         startActivity(intent);
 
     }

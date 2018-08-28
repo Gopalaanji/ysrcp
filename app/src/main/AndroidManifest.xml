@@ -22,8 +22,12 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".OptionActivity"
-            ></activity>
+        <activity android:name=".F1Activity" />
+        <activity android:name=".F2Activity" />
+        <activity android:name=".F3Activity" />
+        <activity android:name=".F4Activity" />
+        <activity android:name=".F5Activity" />
+        <activity android:name=".F6Activity"></activity>
     </application>
 
 </manifest>
