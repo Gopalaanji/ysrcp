@@ -115,7 +115,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="lato"
                                 android:hint="@string/age"
-                                android:inputType="textPersonName"
+                                android:inputType="number"
                                 android:textSize="14dp" />
                         </android.support.design.widget.TextInputLayout>
 
@@ -134,6 +134,7 @@
                                 android:gravity="top|left"
                                 android:hint="@string/address"
                                 android:inputType="textMultiLine"
+                                android:lines="2"
                                 android:maxLines="2"
                                 android:scrollbars="vertical"
                                 android:textSize="14dp" />
@@ -241,8 +242,9 @@
                                 android:inputType="textPersonName"
                                 android:textSize="14dp" />
                         </android.support.design.widget.TextInputLayout>
-                         
+
                         <Button
+                            android:id="@+id/next_main"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"

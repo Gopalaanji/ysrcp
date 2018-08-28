@@ -53,6 +53,8 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
 
-        } else mobile.setError("Invalied Mobile");
+        } else {
+            mobile.setError("Invalied Mobile");
+        }
     }
 }

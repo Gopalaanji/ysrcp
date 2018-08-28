@@ -78,7 +78,7 @@
                     android:drawablePadding="5dp"
                     android:gravity="center_vertical"
                     android:hint="@string/mobile_login"
-                    android:inputType="textPassword"
+                    android:inputType="number"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -96,10 +96,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alpha="1"
-                    android:background="#4a317e"
+                    android:background="@color/colorAccent"
                     android:onClick="logIn"
                     android:text="@string/login"
-                    android:textColor="#fff"
+                    android:textColor="@color/white"
 
                     />
                 <!--android:background="@drawable/ripple"-->
