@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString(Config.mobile, mobile_no);
             editor.putString(Config.username, user_name);
             editor.putString(Config.date, date);
-
+            editor.commit();
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
