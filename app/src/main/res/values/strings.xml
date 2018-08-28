@@ -25,4 +25,14 @@
     <string name="next">Next</string>
 
 
+    <string name="q1"> Q1. How is the </string>
+
+
+    <string name="vp">Very Poor</string>
+    <string name="poor">Poor</string>
+    <string name="ok">Ok</string>
+    <string name="good">Good</string>
+    <string name="vgood">Very Good</string>
+
+
 </resources>
