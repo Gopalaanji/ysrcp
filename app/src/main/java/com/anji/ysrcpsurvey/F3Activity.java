@@ -44,7 +44,11 @@ public class F3Activity extends AppCompatActivity {
     }
 
     public void backPage(View view) {
-        Intent intent = new Intent(getApplicationContext(), F2Activity.class);
-        startActivity(intent);
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

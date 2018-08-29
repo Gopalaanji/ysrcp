@@ -45,4 +45,13 @@ public class F1Activity extends AppCompatActivity {
 
         //finish();
     }
+
+    public void backPage(View view) {
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

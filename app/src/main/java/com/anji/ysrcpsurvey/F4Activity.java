@@ -40,7 +40,11 @@ public class F4Activity extends AppCompatActivity {
         // finish();
     }
     public void backPage(View view){
-        Intent intent = new Intent(getApplicationContext(), F3Activity.class);
-        startActivity(intent);
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -26,7 +26,11 @@ public class F6Activity extends AppCompatActivity {
     }
 
     public void backPage(View view) {
-        Intent intent = new Intent(getApplicationContext(), F5Activity.class);
-        startActivity(intent);
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

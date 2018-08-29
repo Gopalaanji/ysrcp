@@ -93,18 +93,52 @@
 
                         </RadioGroup>
 
-                        <Button
-                            android:id="@+id/next_f1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@color/colorAccent"
-                            android:onClick="nextPage"
-                            android:text="@string/next"
-                            android:textColor="@color/white"
-                            android:textSize="14dp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:id="@+id/back_f1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/colorAccent"
+                                android:onClick="backPage"
+                                android:text="@string/back"
+                                android:textColor="@color/white"
+                                android:textSize="14dp" />
+
+                            <Button
+                                android:id="@+id/next_f1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/colorAccent"
+                                android:onClick="nextPage"
+                                android:text="@string/next"
+                                android:textColor="@color/white"
+                                android:textSize="14dp" />
+
+
+                        </RelativeLayout>
+
+                        <!--<Button-->
+                            <!--android:id="@+id/next_f1"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="end"-->
+                            <!--android:layout_marginRight="15dp"-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:background="@color/colorAccent"-->
+                            <!--android:onClick="nextPage"-->
+                            <!--android:text="@string/next"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:textSize="14dp" />-->
                     </LinearLayout>
 
 
