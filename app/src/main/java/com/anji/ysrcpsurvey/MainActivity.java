@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tx3 = (EditText) findViewById(R.id.tx3_main);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
         //radiogroup.setOnCheckedChangeListener(this);
     }
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             s_tx2 = tx2.getText().toString().trim();
             s_tx3 = tx3.getText().toString().trim();
 
-            Intent intent = new Intent(getApplicationContext(), F1Activity.class);
+            Intent intent = new Intent(MainActivity.this, F1Activity.class);
             startActivity(intent);
 
         } catch (Exception e) {

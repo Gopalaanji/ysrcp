@@ -37,7 +37,7 @@ public class F2Activity extends AppCompatActivity {
             } else {
                 f2 = 4;
             }
-            Intent intent = new Intent(getApplicationContext(), F3Activity.class);
+            Intent intent = new Intent(F2Activity.this, F3Activity.class);
             startActivity(intent);
         } catch (Exception e) {
             Toast.makeText(this, "Please Answer Above Question", Toast.LENGTH_SHORT).show();
