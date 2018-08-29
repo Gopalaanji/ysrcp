@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.MainActivity">
 
-
-    <item
-        android:id="@+id/sync"
-        android:title="@string/scnz"
-        app:showAsAction="never" />
     <item
         android:id="@+id/logout"
         android:title="@string/logout"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/sync"
+        android:title="@string/scnz"
+        app:showAsAction="never" />
+
 </menu>
