@@ -3,6 +3,7 @@ package com.anji.ysrcpsurvey;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,11 +52,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    static String s_name, s_age, s_gender, s_village, s_assembly, s_dist, s_tx1, s_tx2, s_tx3;
 
     void nextPage() {
-        int selectedId = radiogroup.getCheckedRadioButtonId();
-        RadioButton radioButton = (RadioButton) findViewById(selectedId);
-        String radiostring = radioButton.getText().toString();
+        try {
+            int selectedId = radiogroup.getCheckedRadioButtonId();
+            RadioButton radioButton = (RadioButton) findViewById(selectedId);
+            s_gender = radioButton.getText().toString();
+            s_name = name.getText().toString().trim();
+            s_age = age.getText().toString().trim();
+            s_village = village.getText().toString().trim();
+            s_assembly = assembly.getText().toString().trim();
+            s_dist = district.getText().toString().trim();
+            s_tx1 = tx1.getText().toString().trim();
+            s_tx2 = tx2.getText().toString().trim();
+            s_tx3 = tx3.getText().toString().trim();
+
+            Intent intent = new Intent(getApplicationContext(), F1Activity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Please select Gender", Toast.LENGTH_SHORT).show();
+        }
+        s_name = name.getText().toString().trim();
+        s_age = age.getText().toString().trim();
+        s_village = village.getText().toString().trim();
+        s_assembly = assembly.getText().toString().trim();
+        s_dist = district.getText().toString().trim();
+        s_tx1 = tx1.getText().toString().trim();
+        s_tx2 = tx2.getText().toString().trim();
+        s_tx3 = tx3.getText().toString().trim();
 
         Intent intent = new Intent(getApplicationContext(), F1Activity.class);
         startActivity(intent);
