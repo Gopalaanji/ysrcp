@@ -46,4 +46,11 @@
     <string name="vgood">Very Good</string>
 
 
+    <string name="logout">Logout</string>
+    <string name="scnz">Synchronize</string>
+
+    <string name="closethisapplication">Are You Sure Want to Logout.. </string>
+    <string name="Logoutapp">Logout</string>
+
+
 </resources>

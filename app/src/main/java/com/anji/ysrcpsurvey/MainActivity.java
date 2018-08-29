@@ -1,9 +1,15 @@
 package com.anji.ysrcpsurvey;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tx2 = (EditText) findViewById(R.id.tx2_main);
         tx3 = (EditText) findViewById(R.id.tx3_main);
 
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
         //radiogroup.setOnCheckedChangeListener(this);
     }
 
@@ -68,23 +78,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             s_tx2 = tx2.getText().toString().trim();
             s_tx3 = tx3.getText().toString().trim();
 
+
+            s_name = name.getText().toString().trim();
+            s_age = age.getText().toString().trim();
+            s_village = village.getText().toString().trim();
+            s_assembly = assembly.getText().toString().trim();
+            s_dist = district.getText().toString().trim();
+            s_tx1 = tx1.getText().toString().trim();
+            s_tx2 = tx2.getText().toString().trim();
+            s_tx3 = tx3.getText().toString().trim();
+
             Intent intent = new Intent(getApplicationContext(), F1Activity.class);
             startActivity(intent);
+
         } catch (Exception e) {
             Toast.makeText(this, "Please select Gender", Toast.LENGTH_SHORT).show();
         }
-        s_name = name.getText().toString().trim();
-        s_age = age.getText().toString().trim();
-        s_village = village.getText().toString().trim();
-        s_assembly = assembly.getText().toString().trim();
-        s_dist = district.getText().toString().trim();
-        s_tx1 = tx1.getText().toString().trim();
-        s_tx2 = tx2.getText().toString().trim();
-        s_tx3 = tx3.getText().toString().trim();
 
-        Intent intent = new Intent(getApplicationContext(), F1Activity.class);
-        startActivity(intent);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_menus, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.logout:
+                logOut();
+                // do your sign-out stuff
+                break;
+            case R.id.sync:
+                Toast.makeText(this, "Under Development", Toast.LENGTH_SHORT).show();
+                break;
+
+            // case blocks for other MenuItems (if any)
+        }
+        return false;
+    }
+
+    void logOut() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                MainActivity.this);
+        String log = getResources().getString(R.string.Logoutapp);
+        alertDialog.setTitle(log);
+        String exit = getResources().getString(R.string.closethisapplication);
+        alertDialog.setMessage(exit);
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //dialog.cancel();
+            }
+        });
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                        } catch (Exception ex) {
+                            Log.e("ex", ex + "");
+                        }
+
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+        );
+        // Showing Alert Message
+        alertDialog.show();
     }
 
     private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
