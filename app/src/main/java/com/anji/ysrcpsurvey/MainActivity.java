@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,11 +23,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RadioGroup radiogroup;
     Button next_main;
     EditText name, age, address, village, assembly, district, tx1, tx2, tx3;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pref = getSharedPreferences(Config.MAIN, 0);
+        editor = pref.edit();
+        editor.putString(Config.mobile, "");
+        editor.putString(Config.username, "");
+        editor.putString(Config.date1, "");
+        editor.commit();
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup_main);
         next_main = (Button) findViewById(R.id.next_main);
         next_main.setOnClickListener(this);
@@ -62,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    static String s_name, s_age, s_gender, s_village, s_assembly, s_dist, s_tx1, s_tx2, s_tx3;
+    static String s_name, s_age, s_gender, s_village, s_assembly, s_dist, s_tx1, s_tx2, s_tx3, s_add;
 
     void nextPage() {
         try {
@@ -77,16 +87,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             s_tx1 = tx1.getText().toString().trim();
             s_tx2 = tx2.getText().toString().trim();
             s_tx3 = tx3.getText().toString().trim();
+            s_add = address.getText().toString().trim();
 
-
-            s_name = name.getText().toString().trim();
-            s_age = age.getText().toString().trim();
-            s_village = village.getText().toString().trim();
-            s_assembly = assembly.getText().toString().trim();
-            s_dist = district.getText().toString().trim();
-            s_tx1 = tx1.getText().toString().trim();
-            s_tx2 = tx2.getText().toString().trim();
-            s_tx3 = tx3.getText().toString().trim();
+//
+//            s_name = name.getText().toString().trim();
+//            s_age = age.getText().toString().trim();
+//            s_village = village.getText().toString().trim();
+//            s_assembly = assembly.getText().toString().trim();
+//            s_dist = district.getText().toString().trim();
+//            s_tx1 = tx1.getText().toString().trim();
+//            s_tx2 = tx2.getText().toString().trim();
+//            s_tx3 = tx3.getText().toString().trim();
 
             Intent intent = new Intent(MainActivity.this, F1Activity.class);
             startActivity(intent);
@@ -135,13 +146,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
+
+
+                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+
                         } catch (Exception ex) {
                             Log.e("ex", ex + "");
                         }
 
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        finish();
+
                     }
                 }
         );
