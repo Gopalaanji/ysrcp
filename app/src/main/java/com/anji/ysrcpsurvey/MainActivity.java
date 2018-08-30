@@ -18,6 +18,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     RadioGroup radiogroup;
@@ -33,10 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         pref = getSharedPreferences(Config.MAIN, 0);
         editor = pref.edit();
-        editor.putString(Config.mobile, "");
-        editor.putString(Config.username, "");
-        editor.putString(Config.date1, "");
-        editor.commit();
+
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup_main);
         next_main = (Button) findViewById(R.id.next_main);
         next_main.setOnClickListener(this);
@@ -123,12 +122,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // do your sign-out stuff
                 break;
             case R.id.sync:
+                syncz();
                 Toast.makeText(this, "Under Development", Toast.LENGTH_SHORT).show();
                 break;
 
             // case blocks for other MenuItems (if any)
         }
         return false;
+    }
+
+    void syncz() {
+
+
+        DatabaseHelper db = new DatabaseHelper(this);
+        List<Contact> contacts = db.getAllContacts();
+        StringBuffer abc = new StringBuffer();
+        if (contacts.size() == 0) {
+            Toast.makeText(this, "You Don't Have Any SurveyList", Toast.LENGTH_SHORT).show();
+        } else {
+            for (Contact cn : contacts) {
+                Log.d("Name: ", cn + "" + cn.getAddc() + cn.getAgec());
+
+            }
+
+        }
+
     }
 
     void logOut() {
@@ -146,7 +164,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
-
+                            editor.putString(Config.mobile, "");
+                            editor.putString(Config.username, "");
+                            editor.putString(Config.date1, "");
+                            editor.commit();
 
                             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                             startActivity(intent);

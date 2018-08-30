@@ -9,8 +9,8 @@ public class Contact {
     int q1c, q2c, q3c, q4c, q5c, q6c;
     String timeon, sname, sno, namec, genderc, agec, addc, vill, assemblyc, distc, tex1, tex2, tex3;
 
-//    public Contact() {
-//    }
+    public Contact() {
+    }
 
     public Contact(int q1c, int q2c, int q3c, int q4c, int q5c, int q6c, String timeon, String sname, String sno, String namec, String genderc, String agec, String addc, String vill, String assemblyc, String distc, String tex1, String tex2, String tex3) {
         this.q1c = q1c;

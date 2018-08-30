@@ -64,6 +64,9 @@ public class F6Activity extends AppCompatActivity {
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         String time = formatter.format(ts);
         databaseHelper.addContact(new Contact(F1Activity.f1, F2Activity.f2, F3Activity.f3, F4Activity.f4, F5Activity.f5, f6, time, sname, samobile, MainActivity.s_name, MainActivity.s_gender, MainActivity.s_age, MainActivity.s_add, MainActivity.s_village, MainActivity.s_assembly, MainActivity.s_dist, MainActivity.s_tx1, MainActivity.s_tx2, MainActivity.s_tx3));
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        finish();
+        startActivity(intent);
     }
 
     public void backPage(View view) {
