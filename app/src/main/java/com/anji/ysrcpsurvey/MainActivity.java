@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.sync:
                 syncz();
-                Toast.makeText(this, "Under Development", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(this, "Under Development", Toast.LENGTH_SHORT).show();
                 break;
 
             // case blocks for other MenuItems (if any)
