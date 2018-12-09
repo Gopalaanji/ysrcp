@@ -19,24 +19,16 @@ public class F2Activity extends AppCompatActivity {
 
     }
 
-    static int f2;
+    static String q2;
 
     public void nextPage(View view) {
 
         try {
             int selectedId = radiogroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
-            String a = radioButton.getText().toString();
+            q2 = radioButton.getText().toString();
 
-            if (a.equals(getResources().getString(R.string.vp))) {
-                f2 = 1;
-            } else if (a.equals(getResources().getString(R.string.poor))) {
-                f2 = 2;
-            } else if (a.equals(getResources().getString(R.string.ok))) {
-                f2 = 3;
-            } else {
-                f2 = 4;
-            }
+
             Intent intent = new Intent(F2Activity.this, F3Activity.class);
             startActivity(intent);
         } catch (Exception e) {
@@ -46,9 +38,9 @@ public class F2Activity extends AppCompatActivity {
         // finish();
     }
 
-    public void backPage(View view) {
-        onBackPressed();
-    }
+//    public void backPage(View view) {
+//        onBackPressed();
+//    }
 
     @Override
     public void onBackPressed() {

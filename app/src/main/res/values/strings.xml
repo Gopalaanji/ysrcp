@@ -2,9 +2,9 @@
     <string name="app_name">PUBLIC OPINION</string>
 
     <string name="title_activity_login">Login</string>
-    <string name="username">Surver Name</string>
-    <string name="mobile_login">Mobile NO</string>
-    <string name="login">Login</string>
+    <string name="username">Email</string>
+    <string name="mobile_login">Password</string>
+    <string name="login">Sin In</string>
     <string name="hidername_login">PUBLIC OPINION SURVEY</string>
 
 
@@ -27,12 +27,12 @@
     <string name="save">Save</string>
 
 
-    <string name="q1"> Q1. How is the </string>
-    <string name="q2"> Q2. How is the </string>
-    <string name="q3"> Q3. How is the </string>
-    <string name="q4"> Q4. How is the </string>
-    <string name="q5"> Q5. How is the </string>
-    <string name="q6"> Q6. How is the </string>
+    <string name="q1"> Q1.Are you satisfied with this state govt working ? </string>
+    <string name="q2"> Q2.Are you satisfied with present MLA working ? </string>
+    <string name="q3"> Q3.Which party are you vote on election ? </string>
+    <string name="q4"> Q4.Who will you choose in next MLA election on  the below list?</string>
+    <string name="q5"> Q5.Who will you choose in next MP election on  the below list? </string>
+    <string name="q6"> Q6.Which party did vote for last election? </string>
     <string name="q7"> Q7. How is the </string>
     <string name="q8"> Q8. How is the </string>
     <string name="q9"> Q9. How is the </string>

@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String mobile_no = mobile.getText().toString().trim();
         String user_name = username.getText().toString().trim();
-        if (mobile_no.length() == 10) {
+//        if (mobile_no.length() == 10) {
             editor = pref.edit();
             editor.putString(Config.mobile, mobile_no);
             editor.putString(Config.username, user_name);
@@ -58,8 +58,8 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
 
-        } else {
-            mobile.setError("Invalied Mobile");
-        }
+//        } else {
+//            mobile.setError("Invalied Mobile");
+//        }
     }
 }

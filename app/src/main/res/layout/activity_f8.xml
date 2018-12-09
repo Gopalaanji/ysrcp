@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".F3Activity">
+    tools:context=".F7Activity">
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -47,7 +47,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Q3.రాబోయే ఎన్నికల్లో మీరు ఏ పార్టీకి ఓటు వేస్తారు?"
+                            android:text="Q8..ఈ శాంపిల్ పరిగణనలోకి తీసుకోవాలా లేదా?"
                             android:textSize="14dp" />
 
                         <RadioGroup
@@ -64,7 +64,7 @@
                                 android:id="@+id/radio_1vp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="TDP"
+                                android:text=" తీసుకోవాలి "
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -72,70 +72,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="YSRCP"
-                                android:textSize="15dp" />
-
-                            <RadioButton
-                                android:id="@+id/radio_1ok"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="Janasena"
-                                android:textSize="15dp" />
-
-                            <RadioButton
-                                android:id="@+id/radio_1good"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="Congress"
-                                android:textSize="15dp" />
-
-                            <RadioButton
-                                android:id="@+id/radio_bjp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="BJP"
-                                android:textSize="15dp" />
-
-                            <RadioButton
-                                android:id="@+id/radio_others"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="Others"
-                                android:textSize="15dp" />
-
-                            <RadioButton
-                                android:id="@+id/radio_non"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="NON of the above"
+                                android:text="  తీసుకోవద్దు "
                                 android:textSize="15dp" />
 
                         </RadioGroup>
+
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <!--<Button-->
-                                <!--android:id="@+id/back_f3"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:layout_gravity="end"-->
-                                <!--android:layout_marginLeft="30dp"-->
-                                <!--android:layout_marginTop="10dp"-->
-                                <!--android:background="@color/colorAccent"-->
-                                <!--android:onClick="backPage"-->
-                                <!--android:text="@string/back"-->
-                                <!--android:textColor="@color/white"-->
-                                <!--android:textSize="14dp" />-->
 
                             <Button
-                                android:id="@+id/next_f3"
+                                android:id="@+id/next_f7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -143,7 +92,7 @@
                                 android:layout_marginTop="10dp"
                                 android:background="@color/colorAccent"
                                 android:onClick="nextPage"
-                                android:text="@string/next"
+                                android:text="@string/save"
                                 android:textColor="@color/white"
                                 android:textSize="14dp" />
 

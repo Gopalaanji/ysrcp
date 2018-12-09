@@ -2,9 +2,12 @@ package com.anji.ysrcpsurvey;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,9 +25,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
-    RadioGroup radiogroup;
+    RadioGroup radiogroup_gender, radio_age, radiogroup_edu;
     Button next_main;
-    EditText name, age, address, village, assembly, district, tx1, tx2, tx3;
+    EditText name, cNo, bussiness;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
@@ -35,19 +38,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         pref = getSharedPreferences(Config.MAIN, 0);
         editor = pref.edit();
-
-        radiogroup = (RadioGroup) findViewById(R.id.radiogroup_main);
+        radio_age = (RadioGroup) findViewById(R.id.radiogroup_age);
+        radiogroup_gender = (RadioGroup) findViewById(R.id.radiogroup_gender);
+        radiogroup_edu = (RadioGroup) findViewById(R.id.radiogroup_edu);
         next_main = (Button) findViewById(R.id.next_main);
         next_main.setOnClickListener(this);
         name = (EditText) findViewById(R.id.name_main);
-        age = (EditText) findViewById(R.id.age_main);
-        address = (EditText) findViewById(R.id.address_main);
-        village = (EditText) findViewById(R.id.village_main);
-        assembly = (EditText) findViewById(R.id.ass_main);
-        district = (EditText) findViewById(R.id.dist_main);
-        tx1 = (EditText) findViewById(R.id.text_main);
-        tx2 = (EditText) findViewById(R.id.tx2_main);
-        tx3 = (EditText) findViewById(R.id.tx3_main);
+        cNo = (EditText) findViewById(R.id.contact);
+        bussiness = (EditText) findViewById(R.id.bussiness);
 
 
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -71,41 +69,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    static String s_name, s_age, s_gender, s_village, s_assembly, s_dist, s_tx1, s_tx2, s_tx3, s_add;
+    static String s_name, s_gender, s_age, s_education, s_contactNo, s_bussiness;
 
     void nextPage() {
         try {
-            int selectedId = radiogroup.getCheckedRadioButtonId();
-            RadioButton radioButton = (RadioButton) findViewById(selectedId);
-            s_gender = radioButton.getText().toString();
+
+            try {
+                int selectedId = radiogroup_gender.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) findViewById(selectedId);
+                s_gender = radioButton.getText().toString();
+
+            } catch (Exception e) {
+                Toast.makeText(this, "Please select Gender", Toast.LENGTH_SHORT).show();
+            }
+            try {
+                int selectedId = radio_age.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) findViewById(selectedId);
+                s_age = radioButton.getText().toString();
+
+            } catch (Exception e) {
+                Toast.makeText(this, "Please Select Age Group", Toast.LENGTH_SHORT).show();
+            }
+            try {
+                int selectedId = radiogroup_edu.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) findViewById(selectedId);
+                s_education = radioButton.getText().toString();
+            } catch (Exception e) {
+                Toast.makeText(this, "Please Select Education ", Toast.LENGTH_SHORT).show();
+            }
+
             s_name = name.getText().toString().trim();
-            s_age = age.getText().toString().trim();
-            s_village = village.getText().toString().trim();
-            s_assembly = assembly.getText().toString().trim();
-            s_dist = district.getText().toString().trim();
-            s_tx1 = tx1.getText().toString().trim();
-            s_tx2 = tx2.getText().toString().trim();
-            s_tx3 = tx3.getText().toString().trim();
-            s_add = address.getText().toString().trim();
+            s_contactNo = cNo.getText().toString().trim();
+            s_bussiness = bussiness.getText().toString().trim();
+            if (!s_name.isEmpty() && !s_contactNo.isEmpty() && !s_bussiness.isEmpty()) {
+                Intent intent = new Intent(MainActivity.this, MandalAndVillage.class);
+                startActivity(intent);
+            } else {
 
-//
-//            s_name = name.getText().toString().trim();
-//            s_age = age.getText().toString().trim();
-//            s_village = village.getText().toString().trim();
-//            s_assembly = assembly.getText().toString().trim();
-//            s_dist = district.getText().toString().trim();
-//            s_tx1 = tx1.getText().toString().trim();
-//            s_tx2 = tx2.getText().toString().trim();
-//            s_tx3 = tx3.getText().toString().trim();
-
-            Intent intent = new Intent(MainActivity.this, F1Activity.class);
-            startActivity(intent);
-
+                if (s_name.isEmpty()) {
+                    name.setError("Can't Be Empty");
+                }
+                if (s_contactNo.isEmpty()) {
+                    cNo.setError("Can't Be Empty");
+                }
+                if (s_bussiness.isEmpty()) {
+                    bussiness.setError("Can't Be Empty");
+                }
+            }
         } catch (Exception e) {
-            Toast.makeText(this, "Please select Gender", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     @Override
@@ -123,9 +135,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.sync:
                 syncz();
-                 Toast.makeText(this, "Under Development", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this, "Under Development", Toast.LENGTH_SHORT).show();
                 break;
-
             // case blocks for other MenuItems (if any)
         }
         return false;
@@ -133,19 +144,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void syncz() {
 
+        ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-        DatabaseHelper db = new DatabaseHelper(this);
-        List<Contact> contacts = db.getAllContacts();
-        StringBuffer abc = new StringBuffer();
-        if (contacts.size() == 0) {
-            Toast.makeText(this, "You Don't Have Any SurveyList", Toast.LENGTH_SHORT).show();
-        } else {
-            for (Contact cn : contacts) {
-                Log.d("Name: ", cn + "" + cn.getAddc() + cn.getAgec());
+        if (mWifi.isConnected()) {
+            // Do whatever
+            DatabaseHelper db = new DatabaseHelper(this);
+            List<Contact> contacts = db.getAllContacts();
+            StringBuffer abc = new StringBuffer();
+            Log.e("size", contacts.size() + "");
+            if (contacts.size() == 0) {
+                Toast.makeText(this, "You Don't Have Any SurveyList", Toast.LENGTH_SHORT).show();
+            } else {
+                for (Contact cn : contacts) {
+
+
+                }
 
             }
 
+
+        } else {
+            Toast.makeText(this, "Please Connect WIFI", Toast.LENGTH_SHORT).show();
         }
+
 
     }
 

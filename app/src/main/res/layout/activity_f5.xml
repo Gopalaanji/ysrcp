@@ -47,7 +47,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/q5"
+                            android:text="Q5.రాబోయే ఎన్నికల్లో ఈ క్రింది అభ్యర్థులలో ఎంపీ గా మీరు ఎవరికి ఓటు వేస్తారు?"
                             android:textSize="14dp" />
 
                         <RadioGroup
@@ -61,35 +61,70 @@
 
                             <RadioButton
 
-                                android:id="@+id/radio_1vp"
+                                android:id="@+id/radio_tdp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/vp"
+                                android:text=" Sri Galla Jayadev(TDP MP)"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:id="@+id/radio_1v"
+                                android:id="@+id/radio_ysrcp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/poor"
+                                android:text=" Sri Kilari Venkata Rosaiah(YSRCP)"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:id="@+id/radio_1ok"
+                                android:id="@+id/radio_anyonejana"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/ok"
+                                android:text=" Any One from TDP"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:id="@+id/radio_1good"
+                                android:id="@+id/radio_anyonetdp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/good"
+                                android:text="Any One from YSRCP"
                                 android:textSize="15dp" />
+
+                            <RadioButton
+                                android:id="@+id/anyoneysrcp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="Any One from Janasena"
+                                android:textSize="15dp" />
+
+
+                            <RadioButton
+                                android:id="@+id/anyonebjp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text=" Any One from BJP"
+                                android:textSize="15dp" />
+
+                            <RadioButton
+                                android:id="@+id/anyonecongress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="Any One from Congress"
+                                android:textSize="15dp" />
+
+                            <RadioButton
+                                android:id="@+id/others"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="Others"
+                                android:textSize="15dp" />
+
+
 
                         </RadioGroup>
 
@@ -97,18 +132,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <Button
-                                android:id="@+id/back_f5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:layout_marginLeft="30dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@color/colorAccent"
-                                android:onClick="backPage"
-                                android:text="@string/back"
-                                android:textColor="@color/white"
-                                android:textSize="14dp" />
+                            <!--<Button-->
+                                <!--android:id="@+id/back_f5"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="end"-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:background="@color/colorAccent"-->
+                                <!--android:onClick="backPage"-->
+                                <!--android:text="@string/back"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="14dp" />-->
 
                             <Button
                                 android:id="@+id/next_f5"

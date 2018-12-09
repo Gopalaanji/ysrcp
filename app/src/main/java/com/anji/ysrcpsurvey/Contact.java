@@ -6,80 +6,31 @@ package com.anji.ysrcpsurvey;
 
 public class Contact {
 
-    int q1c, q2c, q3c, q4c, q5c, q6c;
-    String timeon, sname, sno, namec, genderc, agec, addc, vill, assemblyc, distc, tex1, tex2, tex3;
+
+    String timeon, snames, gender, s_age, s_education, s_contactNo, s_bussiness, s_mandal, s_village, s_cast, q1, q2, q3, q4, q5, q6, q7, q8;
 
     public Contact() {
     }
 
-    public Contact(int q1c, int q2c, int q3c, int q4c, int q5c, int q6c, String timeon, String sname, String sno, String namec, String genderc, String agec, String addc, String vill, String assemblyc, String distc, String tex1, String tex2, String tex3) {
-        this.q1c = q1c;
-        this.q2c = q2c;
-        this.q3c = q3c;
-        this.q4c = q4c;
-        this.q5c = q5c;
-        this.q6c = q6c;
+    public Contact(String timeon, String snames, String gender, String s_age, String s_education, String s_contactNo, String s_bussiness, String s_mandal, String s_village, String s_cast, String q1, String q2, String q3, String q4, String q5, String q6, String q7, String q8) {
         this.timeon = timeon;
-        this.sname = sname;
-        this.sno = sno;
-        this.namec = namec;
-        this.genderc = genderc;
-        this.agec = agec;
-        this.addc = addc;
-        this.vill = vill;
-        this.assemblyc = assemblyc;
-        this.distc = distc;
-        this.tex1 = tex1;
-        this.tex2 = tex2;
-        this.tex3 = tex3;
-    }
-
-    public int getQ1c() {
-        return q1c;
-    }
-
-    public void setQ1c(int q1c) {
-        this.q1c = q1c;
-    }
-
-    public int getQ2c() {
-        return q2c;
-    }
-
-    public void setQ2c(int q2c) {
-        this.q2c = q2c;
-    }
-
-    public int getQ3c() {
-        return q3c;
-    }
-
-    public void setQ3c(int q3c) {
-        this.q3c = q3c;
-    }
-
-    public int getQ4c() {
-        return q4c;
-    }
-
-    public void setQ4c(int q4c) {
-        this.q4c = q4c;
-    }
-
-    public int getQ5c() {
-        return q5c;
-    }
-
-    public void setQ5c(int q5c) {
-        this.q5c = q5c;
-    }
-
-    public int getQ6c() {
-        return q6c;
-    }
-
-    public void setQ6c(int q6c) {
-        this.q6c = q6c;
+        this.snames = snames;
+        this.gender = gender;
+        this.s_age = s_age;
+        this.s_education = s_education;
+        this.s_contactNo = s_contactNo;
+        this.s_bussiness = s_bussiness;
+        this.s_mandal = s_mandal;
+        this.s_village = s_village;
+        this.s_cast = s_cast;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.q3 = q3;
+        this.q4 = q4;
+        this.q5 = q5;
+        this.q6 = q6;
+        this.q7 = q7;
+        this.q8 = q8;
     }
 
     public String getTimeon() {
@@ -90,99 +41,139 @@ public class Contact {
         this.timeon = timeon;
     }
 
-    public String getSname() {
-        return sname;
+    public String getSnames() {
+        return snames;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public void setSnames(String snames) {
+        this.snames = snames;
     }
 
-    public String getSno() {
-        return sno;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSno(String sno) {
-        this.sno = sno;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getNamec() {
-        return namec;
+    public String getS_age() {
+        return s_age;
     }
 
-    public void setNamec(String namec) {
-        this.namec = namec;
+    public void setS_age(String s_age) {
+        this.s_age = s_age;
     }
 
-    public String getGenderc() {
-        return genderc;
+    public String getS_education() {
+        return s_education;
     }
 
-    public void setGenderc(String genderc) {
-        this.genderc = genderc;
+    public void setS_education(String s_education) {
+        this.s_education = s_education;
     }
 
-    public String getAgec() {
-        return agec;
+    public String getS_contactNo() {
+        return s_contactNo;
     }
 
-    public void setAgec(String agec) {
-        this.agec = agec;
+    public void setS_contactNo(String s_contactNo) {
+        this.s_contactNo = s_contactNo;
     }
 
-    public String getAddc() {
-        return addc;
+    public String getS_bussiness() {
+        return s_bussiness;
     }
 
-    public void setAddc(String addc) {
-        this.addc = addc;
+    public void setS_bussiness(String s_bussiness) {
+        this.s_bussiness = s_bussiness;
     }
 
-    public String getVill() {
-        return vill;
+    public String getS_mandal() {
+        return s_mandal;
     }
 
-    public void setVill(String vill) {
-        this.vill = vill;
+    public void setS_mandal(String s_mandal) {
+        this.s_mandal = s_mandal;
     }
 
-    public String getAssemblyc() {
-        return assemblyc;
+    public String getS_village() {
+        return s_village;
     }
 
-    public void setAssemblyc(String assemblyc) {
-        this.assemblyc = assemblyc;
+    public void setS_village(String s_village) {
+        this.s_village = s_village;
     }
 
-    public String getDistc() {
-        return distc;
+    public String getS_cast() {
+        return s_cast;
     }
 
-    public void setDistc(String distc) {
-        this.distc = distc;
+    public void setS_cast(String s_cast) {
+        this.s_cast = s_cast;
     }
 
-    public String getTex1() {
-        return tex1;
+    public String getQ1() {
+        return q1;
     }
 
-    public void setTex1(String tex1) {
-        this.tex1 = tex1;
+    public void setQ1(String q1) {
+        this.q1 = q1;
     }
 
-    public String getTex2() {
-        return tex2;
+    public String getQ2() {
+        return q2;
     }
 
-    public void setTex2(String tex2) {
-        this.tex2 = tex2;
+    public void setQ2(String q2) {
+        this.q2 = q2;
     }
 
-    public String getTex3() {
-        return tex3;
+    public String getQ3() {
+        return q3;
     }
 
-    public void setTex3(String tex3) {
-        this.tex3 = tex3;
+    public void setQ3(String q3) {
+        this.q3 = q3;
+    }
+
+    public String getQ4() {
+        return q4;
+    }
+
+    public void setQ4(String q4) {
+        this.q4 = q4;
+    }
+
+    public String getQ5() {
+        return q5;
+    }
+
+    public void setQ5(String q5) {
+        this.q5 = q5;
+    }
+
+    public String getQ6() {
+        return q6;
+    }
+
+    public void setQ6(String q6) {
+        this.q6 = q6;
+    }
+
+    public String getQ7() {
+        return q7;
+    }
+
+    public void setQ7(String q7) {
+        this.q7 = q7;
+    }
+
+    public String getQ8() {
+        return q8;
+    }
+
+    public void setQ8(String q8) {
+        this.q8 = q8;
     }
 }

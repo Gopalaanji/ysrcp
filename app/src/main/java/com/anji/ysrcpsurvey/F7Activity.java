@@ -8,41 +8,34 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class F1Activity extends AppCompatActivity {
-    RadioGroup radiogroup;
+public class F7Activity extends AppCompatActivity {
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_option);
-        radiogroup = (RadioGroup) findViewById(R.id.radiogroup_q1);
+        setContentView(R.layout.activity_f7);
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup_q1);
     }
 
-    static String q1;
+    static String q7;
 
     public void nextPage(View view) {
 
         try {
-            int selectedId = radiogroup.getCheckedRadioButtonId();
+            int selectedId = radioGroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
-             q1 = radioButton.getText().toString();
-
-            Intent intent = new Intent(getApplicationContext(), F2Activity.class);
+            q7 = radioButton.getText().toString();
+            Intent intent = new Intent(this, F8Activity.class);
             startActivity(intent);
+
+
         } catch (Exception e) {
             Toast.makeText(this, "Please Answer Above Question", Toast.LENGTH_SHORT).show();
         }
 
+        //  Toast.makeText(this, "succusfully saved", Toast.LENGTH_SHORT).show();
 
-        //finish();
-    }
 
-//    public void backPage(View view) {
-//        onBackPressed();
-//    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
     }
 }

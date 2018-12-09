@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.anji.ysrcpsurvey">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/publicopinion"
@@ -18,8 +20,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-           />
+            android:label="@string/app_name" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
@@ -28,7 +29,12 @@
         <activity android:name=".F3Activity" />
         <activity android:name=".F4Activity" />
         <activity android:name=".F5Activity" />
-        <activity android:name=".F6Activity"></activity>
+        <activity android:name=".F6Activity" />
+        <activity android:name=".DashBoard" />
+        <activity android:name=".MandalAndVillage" />
+        <activity android:name=".Cast" />
+        <activity android:name=".F7Activity" />
+        <activity android:name=".F8Activity"></activity>
     </application>
 
 </manifest>

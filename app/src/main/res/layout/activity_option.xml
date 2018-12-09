@@ -47,7 +47,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/q1"
+                            android:text="Q1. ప్రస్తుత ఎమ్మెల్యే పనితీరు ఎలా ఉంది ?"
                             android:textSize="14dp" />
 
                         <RadioGroup
@@ -64,7 +64,7 @@
                                 android:id="@+id/radio_1vp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/vp"
+                                android:text="బాగుంది"
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -72,7 +72,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/poor"
+                                android:text="పరవాలేదు"
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -80,15 +80,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/ok"
-                                android:textSize="15dp" />
-
-                            <RadioButton
-                                android:id="@+id/radio_1good"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text="@string/good"
+                                android:text=" బాగాలేదు"
                                 android:textSize="15dp" />
 
                         </RadioGroup>
@@ -98,18 +90,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <Button
-                                android:id="@+id/back_f1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:layout_marginLeft="30dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@color/colorAccent"
-                                android:onClick="backPage"
-                                android:text="@string/back"
-                                android:textColor="@color/white"
-                                android:textSize="14dp" />
+                            <!--<Button-->
+                                <!--android:id="@+id/back_f1"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="end"-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:background="@color/colorAccent"-->
+                                <!--android:onClick="backPage"-->
+                                <!--android:text="@string/back"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="14dp" />-->
 
                             <Button
                                 android:id="@+id/next_f1"

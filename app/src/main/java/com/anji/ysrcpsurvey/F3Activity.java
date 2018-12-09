@@ -18,23 +18,15 @@ public class F3Activity extends AppCompatActivity {
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup_q1);
     }
 
-    static int f3;
+    static String q3;
 
     public void nextPage(View view) {
         try {
             int selectedId = radiogroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
-            String a = radioButton.getText().toString();
+            q3 = radioButton.getText().toString();
 
-            if (a.equals(getResources().getString(R.string.vp))) {
-                f3 = 1;
-            } else if (a.equals(getResources().getString(R.string.poor))) {
-                f3 = 2;
-            } else if (a.equals(getResources().getString(R.string.ok))) {
-                f3 = 3;
-            } else {
-                f3 = 4;
-            }
+
             Intent intent = new Intent(getApplicationContext(), F4Activity.class);
             startActivity(intent);
         } catch (Exception e) {
@@ -43,9 +35,9 @@ public class F3Activity extends AppCompatActivity {
         // finish();
     }
 
-    public void backPage(View view) {
-        onBackPressed();
-    }
+//    public void backPage(View view) {
+//        onBackPressed();
+//    }
 
     @Override
     public void onBackPressed() {

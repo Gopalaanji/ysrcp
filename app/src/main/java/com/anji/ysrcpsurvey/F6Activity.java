@@ -16,62 +16,41 @@ import java.util.Date;
 
 public class F6Activity extends AppCompatActivity {
     RadioGroup radiogroup;
-    SharedPreferences pref;
-    SharedPreferences.Editor editor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_f6);
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup_q1);
-        pref = getSharedPreferences(Config.MAIN, 0);
+
     }
 
-    int f6;
+    static String q6;
 
     public void nextPage(View view) {
 
         try {
             int selectedId = radiogroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
-            String a = radioButton.getText().toString();
+            q6 = radioButton.getText().toString();
+            Intent intent = new Intent(this, F7Activity.class);
+            startActivity(intent);
 
-            if (a.equals(getResources().getString(R.string.vp))) {
-                f6 = 1;
-            } else if (a.equals(getResources().getString(R.string.poor))) {
-                f6 = 2;
-            } else if (a.equals(getResources().getString(R.string.ok))) {
-                f6 = 3;
-            } else {
-                f6 = 4;
-            }
-            save();
+
         } catch (Exception e) {
             Toast.makeText(this, "Please Answer Above Question", Toast.LENGTH_SHORT).show();
         }
-        Log.e("output", MainActivity.s_age);
+
         //  Toast.makeText(this, "succusfully saved", Toast.LENGTH_SHORT).show();
 
 
     }
 
-    void save() {
-        String sname = pref.getString(Config.username, "");
-        String samobile = pref.getString(Config.mobile, "");
-        Date date = new Date();
-        Timestamp ts = new Timestamp(date.getTime());
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
-        String time = formatter.format(ts);
-        databaseHelper.addContact(new Contact(F1Activity.f1, F2Activity.f2, F3Activity.f3, F4Activity.f4, F5Activity.f5, f6, time, sname, samobile, MainActivity.s_name, MainActivity.s_gender, MainActivity.s_age, MainActivity.s_add, MainActivity.s_village, MainActivity.s_assembly, MainActivity.s_dist, MainActivity.s_tx1, MainActivity.s_tx2, MainActivity.s_tx3));
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        finish();
-        startActivity(intent);
-    }
 
-    public void backPage(View view) {
-        onBackPressed();
-    }
+//    public void backPage(View view) {
+//        onBackPressed();
+//    }
 
     @Override
     public void onBackPressed() {

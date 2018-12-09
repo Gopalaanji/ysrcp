@@ -18,23 +18,27 @@ public class F5Activity extends AppCompatActivity {
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup_q1);
     }
 
-    static int f5;
+    static String q5;
 
     public void nextPage(View view) {
         try {
             int selectedId = radiogroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
-            String a = radioButton.getText().toString();
-
-            if (a.equals(getResources().getString(R.string.vp))) {
-                f5 = 1;
-            } else if (a.equals(getResources().getString(R.string.poor))) {
-                f5 = 2;
-            } else if (a.equals(getResources().getString(R.string.ok))) {
-                f5 = 3;
-            } else {
-                f5 = 4;
-            }
+            q5 = radioButton.getText().toString();
+//
+//            if (a.equals("Mr.Galla Jayadev(TDP)")) {
+//                f5 = 1;
+//            } else if (a.equals("Mr.Sri Lavu Krishnadevarayya(YSRCP)")) {
+//                f5 = 2;
+//            } else if (a.equals("Anyone from Janasena")) {
+//                f5 = 3;
+//            } else if (a.equals("Anyone from TDP")) {
+//                f5 = 4;
+//            } else if (a.equals("Anyone from YSRCP")) {
+//                f5 = 5;
+//            } else {
+//                f5 = 6;
+//            }
             Intent intent = new Intent(getApplicationContext(), F6Activity.class);
             startActivity(intent);
         } catch (Exception e) {
@@ -43,9 +47,9 @@ public class F5Activity extends AppCompatActivity {
         // finish();
     }
 
-    public void backPage(View view) {
-        onBackPressed();
-    }
+//    public void backPage(View view) {
+//        onBackPressed();
+//    }
 
     @Override
     public void onBackPressed() {

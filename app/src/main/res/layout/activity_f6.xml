@@ -47,7 +47,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/q6"
+                            android:text="Q6.  గత ఎన్నికల్లో మీరు ఏ పార్టీకి ఓటు వేశారు ?"
                             android:textSize="14dp" />
 
                         <RadioGroup
@@ -64,7 +64,7 @@
                                 android:id="@+id/radio_1vp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/vp"
+                                android:text="TDP"
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -72,7 +72,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/poor"
+                                android:text="YSRCP"
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -80,7 +80,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/ok"
+                                android:text=" Congress"
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -88,7 +88,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text="@string/good"
+                                android:text="Others"
                                 android:textSize="15dp" />
 
                         </RadioGroup>
@@ -98,18 +98,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <Button
-                                android:id="@+id/back_f6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:layout_marginLeft="30dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@color/colorAccent"
-                                android:onClick="backPage"
-                                android:text="@string/back"
-                                android:textColor="@color/white"
-                                android:textSize="14dp" />
+                            <!--<Button-->
+                                <!--android:id="@+id/back_f6"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="end"-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:background="@color/colorAccent"-->
+                                <!--android:onClick="backPage"-->
+                                <!--android:text="@string/back"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="14dp" />-->
 
                             <Button
                                 android:id="@+id/next_f6"
@@ -120,7 +120,7 @@
                                 android:layout_marginTop="10dp"
                                 android:background="@color/colorAccent"
                                 android:onClick="nextPage"
-                                android:text="@string/save"
+                                android:text="@string/next"
                                 android:textColor="@color/white"
                                 android:textSize="14dp" />
 
