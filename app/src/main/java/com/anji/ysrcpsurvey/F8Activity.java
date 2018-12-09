@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -60,7 +61,12 @@ public class F8Activity extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmssSSS");
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         String time = formatter.format(ts);
-        databaseHelper.addContact(new Contact(time, MainActivity.s_name, MainActivity.s_gender, MainActivity.s_age, MainActivity.s_education, MainActivity.s_contactNo, MainActivity.s_bussiness, MandalAndVillage.s_mandal, MandalAndVillage.s_village, Cast.s_cast, F1Activity.q1, F2Activity.q2, F3Activity.q3, F4Activity.q4, F5Activity.q5, F6Activity.q6, F7Activity.q7, q8));
+        try{
+            databaseHelper.addContact(new Contact(time, MainActivity.s_name, MainActivity.s_gender, MainActivity.s_age, MainActivity.s_education, MainActivity.s_contactNo, MainActivity.s_bussiness, MandalAndVillage.s_mandal, MandalAndVillage.s_village, Cast.s_cast, F1Activity.q1, F2Activity.q2, F3Activity.q3, F4Activity.q4, F5Activity.q5, F6Activity.q6, F7Activity.q7, q8));
+
+        }catch (Exception e){
+            Log.e("dberror",e.getMessage().toString());
+        }
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Success ");
