@@ -54,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + KEY_time + " TEXT,"
-                + KEY_username + "TEXT,"
+                + KEY_username + " TEXT,"
                 + KEY_sNAme + " TEXT,"
                 + KEY_gender + " TEXT,"
                 + KEY_age + " TEXT,"
@@ -63,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + KEY_mandal + " TEXT,"
                 + KEY_contactNo + " TEXT,"
                 + KEY_village + " TEXT,"
-                + KEY_cast + "TEXT,"
+                + KEY_cast+ " TEXT,"
                 + KEYQ1 + " TEXT,"
                 + KEYQ2 + " TEXT,"
                 + KEYQ3 + " TEXT,"

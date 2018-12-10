@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/ymax_withouttext"
+    android:orientation="vertical"
     tools:context=".F7Activity">
 
     <ScrollView
@@ -30,7 +30,7 @@
                 android:background="@color/white"
                 card_view:cardBackgroundColor="#14ffffff"
                 card_view:cardCornerRadius="1dp"
-                card_view:cardElevation="1dp"
+                card_view:cardElevation=".5dp"
                 card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -61,10 +61,10 @@
                             android:orientation="vertical">
 
                             <RadioButton
-                                android:layout_marginLeft="3dp"
                                 android:id="@+id/radio_1vp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
                                 android:text=" తీసుకోవాలి "
                                 android:textSize="15dp" />
 
@@ -89,6 +89,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="5dp"
                                 android:layout_marginRight="30dp"
                                 android:layout_marginTop="10dp"
                                 android:background="@color/colorAccent"

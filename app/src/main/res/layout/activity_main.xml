@@ -31,7 +31,7 @@
                     android:layout_marginRight="2dp"
                     card_view:cardBackgroundColor="#14ffffff"
                     card_view:cardCornerRadius="1dp"
-                    card_view:cardElevation="1dp"
+                    card_view:cardElevation=".5dp"
                     card_view:cardUseCompatPadding="true">
 
                     <LinearLayout
@@ -118,7 +118,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="lato"
                                 android:hint="Contact Number"
-                                android:inputType="textPersonName"
+                                android:inputType="number"
                                 android:textSize="14dp" />
                         </android.support.design.widget.TextInputLayout>
                         <TextView
@@ -254,6 +254,7 @@
                             android:layout_marginRight="20dp"
                             android:background="@color/colorAccent"
                             android:text="@string/next"
+                            android:layout_marginBottom="5dp"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
                     </LinearLayout>

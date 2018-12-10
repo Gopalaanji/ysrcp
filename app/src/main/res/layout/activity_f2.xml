@@ -30,7 +30,7 @@
                 android:background="@color/white"
                 card_view:cardBackgroundColor="#14ffffff"
                 card_view:cardCornerRadius="1dp"
-                card_view:cardElevation="1dp"
+                card_view:cardElevation="0.5dp"
                 card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -113,6 +113,7 @@
                                 android:background="@color/colorAccent"
                                 android:onClick="nextPage"
                                 android:text="@string/next"
+                                android:layout_marginBottom="3dp"
                                 android:textColor="@color/white"
                                 android:textSize="14dp" />
 

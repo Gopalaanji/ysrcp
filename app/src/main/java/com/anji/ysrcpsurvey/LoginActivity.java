@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,6 +18,8 @@ public class LoginActivity extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     String date;
+    String userlist[] = {"9011@gmail.com", "9012@gmail.com", "9013@gmail.com", "9014@gmail.com", "9015@gmail.com", "9016@gmail.com", "9017@gmail.com", "9018@gmail.com", "9019@gmail.com", "9020@gmail.com","9021@gmail.com","9022@gmail.com","9023@gmail.com","9024@gmail.com","9025@gmail.com","9026@gmail.com","9027@gmail.com","9028@gmail.com","9029@gmail.com","9030@gmail.com"};
+    String passList[] = {"uavbix", "jrlwi2", "450wij", "wf850u", "p35zyf", "a2x7k2", "eg5301", "kkv1y3", "hztoi0", "21b7yu","bap7hu","smc2t5","0hsvtu","2czu49","kpky76","pqp8x1","a0ct6p","13zcm6","a3bjp1","kf0b7z"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         Calendar c1 = Calendar.getInstance(); // today
         date = sdf.format(c1.getTime());
         String sharedate = pref.getString(Config.date1, "");
-        Log.e("sharedate",sharedate+date);
+        Log.e("sharedate", sharedate + date);
         if (date.equals(sharedate)) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -43,20 +46,38 @@ public class LoginActivity extends AppCompatActivity {
 
     public void logIn(View view) {
 
+        try {
 
-        String mobile_no = mobile.getText().toString().trim();
-        String user_name = username.getText().toString().trim();
+
+            String mobile_no = mobile.getText().toString().trim();
+            String user_name = username.getText().toString().trim();
 //        if (mobile_no.length() == 10) {
-            editor = pref.edit();
-            editor.putString(Config.mobile, mobile_no);
-            editor.putString(Config.username, user_name);
-            editor.putString(Config.date1, date);
-            editor.commit();
-            String sharedate = pref.getString(Config.date1, "");
-            Log.e("sharedate1",sharedate+".."+date);
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
+
+            Log.e("sharedate1", user_name);
+
+            for (int i = 1; i < userlist.length; i++) {
+                if (user_name.equals(userlist[i])) {
+                    if (mobile_no.equals(passList[i])) {
+                        editor = pref.edit();
+                        editor.putString(Config.mobile, mobile_no);
+                        editor.putString(Config.username, user_name);
+                        editor.putString(Config.date1, date);
+                        editor.commit();
+                        String sharedate = pref.getString(Config.date1, "");
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(this, "Password is  worng", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                  //  Toast.makeText(this, "Username And Password Are Worng", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(this, "Please check usename and password ", Toast.LENGTH_SHORT).show();
+        }
 
 //        } else {
 //            mobile.setError("Invalied Mobile");
