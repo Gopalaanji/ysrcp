@@ -2,6 +2,7 @@ package com.anji.ysrcpsurvey;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +19,7 @@ import android.os.Environment;
 import android.os.StrictMode;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +37,9 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
 
     };
-
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cNo = (EditText) findViewById(R.id.contact);
         bussiness = (EditText) findViewById(R.id.bussiness);
 
+        username = pref.getString(Config.username, "");
 
         checkPermissions();
 
@@ -256,6 +261,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    String filename;
+
     public class ExportDatabaseCSVTask extends AsyncTask<String, Void, Boolean> {
 
         private final ProgressDialog dialog = new ProgressDialog(MainActivity.this);
@@ -275,7 +282,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 exportDir.mkdirs();
             }
 
-            File file = new File(exportDir, "person.csv");
+            String DATE_FORMAT = "yyyyMMdd";
+            SimpleDateFormat sdf;
+            sdf = new SimpleDateFormat(DATE_FORMAT);
+            Calendar c1 = Calendar.getInstance(); // today
+            String date = sdf.format(c1.getTime());
+
+            filename = username + date + ".csv";
+
+
+            File file = new File(exportDir, filename);
             try {
                 file.createNewFile();
                 CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
@@ -305,18 +321,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "Export successful!", Toast.LENGTH_SHORT).show();
 
                 try {
-                    File exportDir = new File(Environment.getExternalStorageDirectory(), "/survey/");
-                    String fileName = "person.csv";
 
-                    StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-                    StrictMode.setVmPolicy(builder.build());
+                    NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(MainActivity.this);
+                    mBuilder.setSmallIcon(R.drawable.publicopinion);
+                    mBuilder.setContentTitle("Export successful");
+                    mBuilder.setContentText(filename);
 
-                    File sharingGifFile = new File(exportDir, fileName);
-                    Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
-                    shareIntent.setType("application/csv");
-                    Uri uri = Uri.fromFile(sharingGifFile);
-                    shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
-                    startActivity(Intent.createChooser(shareIntent, "Share CSV"));
+                    NotificationManager mNotificationManager =
+
+                            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                    mNotificationManager.notify(001, mBuilder.build());
+
+//                    File exportDir = new File(Environment.getExternalStorageDirectory(), "/survey/");
+//                    String fileName = "person.csv";
+//
+//                    StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+//                    StrictMode.setVmPolicy(builder.build());
+//
+//                    File sharingGifFile = new File(exportDir, fileName);
+//                    Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+//                    shareIntent.setType("application/csv");
+//                    Uri uri = Uri.fromFile(sharingGifFile);
+//                    shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+//                    startActivity(Intent.createChooser(shareIntent, "Share CSV"));
                 } catch (Exception e) {
                     Log.e("Mainactivity file", e.getMessage().toString());
                 }

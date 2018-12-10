@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha=".9"
-    android:background="#f1eeee"
+
     android:orientation="vertical"
     android:weightSum="1"
+    android:background="@drawable/ymax_withouttext"
     tools:context=".LoginActivity">
 
     <TextView

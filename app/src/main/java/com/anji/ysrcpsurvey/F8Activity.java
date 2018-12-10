@@ -54,7 +54,7 @@ public class F8Activity extends AppCompatActivity {
 //    timeon,snames,gender,s_age,s_education,s_contactNo,s_bussiness,s_mandal,s_village,s_cast,q1,q2,q3,q4,q5,q6,q7,q8
 
     void save() {
-        String sname = pref.getString(Config.username, "");
+        String username = pref.getString(Config.username, "");
 //        String samobile = pref.getString(Config.mobile, "");
         Date date = new Date();
         Timestamp ts = new Timestamp(date.getTime());
@@ -62,7 +62,7 @@ public class F8Activity extends AppCompatActivity {
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         String time = formatter.format(ts);
         try{
-            databaseHelper.addContact(new Contact(time, MainActivity.s_name, MainActivity.s_gender, MainActivity.s_age, MainActivity.s_education, MainActivity.s_contactNo, MainActivity.s_bussiness, MandalAndVillage.s_mandal, MandalAndVillage.s_village, Cast.s_cast, F1Activity.q1, F2Activity.q2, F3Activity.q3, F4Activity.q4, F5Activity.q5, F6Activity.q6, F7Activity.q7, q8));
+            databaseHelper.addContact(new Contact(time,username, MainActivity.s_name, MainActivity.s_gender, MainActivity.s_age, MainActivity.s_education, MainActivity.s_contactNo, MainActivity.s_bussiness, MandalAndVillage.s_mandal, MandalAndVillage.s_village, Cast.s_cast, F1Activity.q1, F2Activity.q2, F3Activity.q3, F4Activity.q4, F5Activity.q5, F6Activity.q6, F7Activity.q7, q8));
 
         }catch (Exception e){
             Log.e("dberror",e.getMessage().toString());

@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_contactNo = "ContactNo";
     private static final String KEY_mandal = "mandal";
     private static final String KEY_village = "village";
-    private static final String KEY_cast = "cast1";
+    private static final String KEY_cast = "socialCast";
     private static final String KEYQ1 = "q1";
     private static final String KEYQ2 = "q2";
     private static final String KEYQ3 = "q3";
@@ -41,6 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEYQ6 = "q6";
     private static final String KEYQ7 = "q7";
     private static final String KEYQ8 = "q8";
+    private static final String KEY_username = "created_by";
 
 
     public DatabaseHelper(Context context) {
@@ -53,6 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + KEY_time + " TEXT,"
+                + KEY_username + "TEXT,"
                 + KEY_sNAme + " TEXT,"
                 + KEY_gender + " TEXT,"
                 + KEY_age + " TEXT,"
@@ -61,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + KEY_mandal + " TEXT,"
                 + KEY_contactNo + " TEXT,"
                 + KEY_village + " TEXT,"
-               // + KEY_cast + "TEXT,"
+                + KEY_cast + "TEXT,"
                 + KEYQ1 + " TEXT,"
                 + KEYQ2 + " TEXT,"
                 + KEYQ3 + " TEXT,"
@@ -82,7 +84,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     void addContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(KEY_time, contact.getTimeon()); // Contact Name
+        values.put(KEY_time, contact.getTimeon());// Contact Name
+        values.put(KEY_username, contact.getUsername());
         values.put(KEY_sNAme, contact.getSnames()); // Contact Phone
         values.put(KEY_gender, contact.getGender());
         values.put(KEY_age, contact.getS_age());
@@ -91,7 +94,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_bussiness, contact.getS_bussiness());
         values.put(KEY_mandal, contact.getS_mandal());
         values.put(KEY_village, contact.getS_village());
-        //values.put(KEY_cast, contact.getS_cast());
+        values.put(KEY_cast, contact.getS_cast());
         values.put(KEYQ1, contact.getQ1());
         values.put(KEYQ2, contact.getQ2());
         values.put(KEYQ3, contact.getQ3());
@@ -129,23 +132,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 Contact contact = new Contact();
                 contact.setTimeon(cursor.getString(0));
-                contact.setSnames(cursor.getString(1));
-                contact.setGender(cursor.getString(2));
-                contact.setS_age(cursor.getString(3));
-                contact.setS_education(cursor.getString(4));
-                contact.setS_contactNo(cursor.getString(5));
-                contact.setS_bussiness(cursor.getString(6));
-                contact.setS_mandal(cursor.getString(7));
-                contact.setS_village(cursor.getString(8));
-               // contact.setS_cast(cursor.getString(9));
-                contact.setQ1(cursor.getString(9));
-                contact.setQ2(cursor.getString(10));
-                contact.setQ3(cursor.getString(11));
-                contact.setQ4(cursor.getString(12));
-                contact.setQ5(cursor.getString(13));
-                contact.setQ6(cursor.getString(14));
-                contact.setQ7(cursor.getString(15));
-                contact.setQ8(cursor.getString(16));
+                contact.setUsername(cursor.getString(1));
+                contact.setSnames(cursor.getString(2));
+                contact.setGender(cursor.getString(3));
+                contact.setS_age(cursor.getString(4));
+                contact.setS_education(cursor.getString(5));
+                contact.setS_contactNo(cursor.getString(6));
+                contact.setS_bussiness(cursor.getString(7));
+                contact.setS_mandal(cursor.getString(8));
+                contact.setS_village(cursor.getString(9));
+                contact.setS_cast(cursor.getString(10));
+                contact.setQ1(cursor.getString(11));
+                contact.setQ2(cursor.getString(12));
+                contact.setQ3(cursor.getString(13));
+                contact.setQ4(cursor.getString(14));
+                contact.setQ5(cursor.getString(15));
+                contact.setQ6(cursor.getString(16));
+                contact.setQ7(cursor.getString(17));
+                contact.setQ8(cursor.getString(18));
                 contactList.add(contact);
             } while (cursor.moveToNext());
         }
@@ -156,7 +160,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor raw() {
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME , new String[]{});
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME, new String[]{});
 
         return res;
     }

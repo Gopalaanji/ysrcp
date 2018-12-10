@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha=".9"
-    android:background="#f1eeee"
+    android:background="@drawable/ymax_withouttext"
+
     android:orientation="vertical"
     android:weightSum="1"
     tools:context=".DashBoard">
-
+    <!--android:background="#f1eeee"-->
 
 
 

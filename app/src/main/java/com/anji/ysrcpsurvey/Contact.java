@@ -7,12 +7,12 @@ package com.anji.ysrcpsurvey;
 public class Contact {
 
 
-    String timeon, snames, gender, s_age, s_education, s_contactNo, s_bussiness, s_mandal, s_village, s_cast, q1, q2, q3, q4, q5, q6, q7, q8;
+    String timeon,username, snames, gender, s_age, s_education, s_contactNo, s_bussiness, s_mandal, s_village, s_cast, q1, q2, q3, q4, q5, q6, q7, q8;
 
     public Contact() {
     }
 
-    public Contact(String timeon, String snames, String gender, String s_age, String s_education, String s_contactNo, String s_bussiness, String s_mandal, String s_village, String s_cast, String q1, String q2, String q3, String q4, String q5, String q6, String q7, String q8) {
+    public Contact(String timeon,String username, String snames, String gender, String s_age, String s_education, String s_contactNo, String s_bussiness, String s_mandal, String s_village, String s_cast, String q1, String q2, String q3, String q4, String q5, String q6, String q7, String q8) {
         this.timeon = timeon;
         this.snames = snames;
         this.gender = gender;
@@ -31,6 +31,16 @@ public class Contact {
         this.q6 = q6;
         this.q7 = q7;
         this.q8 = q8;
+        this.username=username;
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getTimeon() {

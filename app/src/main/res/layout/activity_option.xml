@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/ymax_withouttext"
     tools:context=".F1Activity">
 
     <ScrollView
@@ -29,7 +30,7 @@
                 android:background="@color/white"
                 card_view:cardBackgroundColor="#14ffffff"
                 card_view:cardCornerRadius="1dp"
-                card_view:cardElevation="1dp"
+                card_view:cardElevation="0.5dp"
                 card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -104,6 +105,7 @@
                                 <!--android:textSize="14dp" />-->
 
                             <Button
+                                android:layout_marginBottom="4dp"
                                 android:id="@+id/next_f1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
