@@ -66,7 +66,7 @@
                                 android:id="@+id/radio_1vp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sri Ravela Kishor Babu(TDP MLA)"
+                                android:text="Dhulipalla Narendra kumar(TDP )"
                                 android:textSize="15dp" />
 
                             <RadioButton
@@ -74,16 +74,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
-                                android:text=" Smt Mekathoti Sucharitha(YSRCP)"
+                                android:text=" Raavi Venkata Ramana(YSRCP)"
                                 android:textSize="15dp" />
 
-                            <RadioButton
-                                android:id="@+id/radio_1ok"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:text=" Sri Dokka Manikyavaraprasad(TDP)"
-                                android:textSize="15dp" />
+
 
                             <RadioButton
                                 android:id="@+id/radio_gha"

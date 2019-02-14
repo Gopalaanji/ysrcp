@@ -18,8 +18,8 @@ public class LoginActivity extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     String date;
-    String userlist[] = {"9011@gmail.com", "9012@gmail.com", "9013@gmail.com", "9014@gmail.com", "9015@gmail.com", "9016@gmail.com", "9017@gmail.com", "9018@gmail.com", "9019@gmail.com", "9020@gmail.com","9021@gmail.com","9022@gmail.com","9023@gmail.com","9024@gmail.com","9025@gmail.com","9026@gmail.com","9027@gmail.com","9028@gmail.com","9029@gmail.com","9030@gmail.com"};
-    String passList[] = {"uavbix", "jrlwi2", "450wij", "wf850u", "p35zyf", "a2x7k2", "eg5301", "kkv1y3", "hztoi0", "21b7yu","bap7hu","smc2t5","0hsvtu","2czu49","kpky76","pqp8x1","a0ct6p","13zcm6","a3bjp1","kf0b7z"};
+    String userlist[] = {"8011","8012","8013","8014","8015","8016","8017","8018","8019","8020","8021","8022","8023","8024","8025","123456","9011@gmail.com", "9012@gmail.com", "9013@gmail.com", "9014@gmail.com", "9015@gmail.com", "9016@gmail.com", "9017@gmail.com", "9018@gmail.com", "9019@gmail.com", "9020@gmail.com","9021@gmail.com","9022@gmail.com","9023@gmail.com","9024@gmail.com","9025@gmail.com","9026@gmail.com","9027@gmail.com","9028@gmail.com","9029@gmail.com","9030@gmail.com"};
+    String passList[] = {"8011","8012","8013","8014","8015","8016","8017","8018","8019","8020","8021","8022","8023","8024","8025","123456","uavbix", "jrlwi2", "450wij", "wf850u", "p35zyf", "a2x7k2", "eg5301", "kkv1y3", "hztoi0", "21b7yu","bap7hu","smc2t5","0hsvtu","2czu49","kpky76","pqp8x1","a0ct6p","13zcm6","a3bjp1","kf0b7z"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

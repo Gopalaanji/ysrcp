@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/ymax_withouttext"
     tools:context=".MandalAndVillage">
 
     <LinearLayout
@@ -42,16 +41,17 @@
                         android:layout_marginTop="5dp"
                         android:orientation="vertical">
 
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginTop="3dp"
-                            android:text="Mandal"
-                            android:textSize="14dp"
+                            android:text="కులం "
+                            android:textSize="16dp"
                             android:textStyle="bold" />
 
                         <RadioGroup
-                            android:id="@+id/radiogroup_mandal"
+                            android:id="@+id/cast"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
@@ -60,70 +60,101 @@
                             android:orientation="vertical">
 
                             <RadioButton
-                                android:id="@+id/radio_m1"
+                                android:id="@+id/kamma"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
-                                android:text=" Ponnur Muncipality"
+                                android:text="  Kamma"
+                                android:textSize="15dp" />
+
+
+                            <RadioButton
+                                android:id="@+id/mala"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="  Mala"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:id="@+id/radio_m2"
+                                android:id="@+id/kapu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
-                                android:text=" Ponnur"
+                                android:text="  Kapu"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:id="@+id/radio_m3"
+                                android:id="@+id/madiga"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
-                                android:text=" Chebrole"
+                                android:text="  Madiga"
+                                android:textSize="15dp" />
+
+
+                            <RadioButton
+                                android:id="@+id/reddy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="  Reddy"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:id="@+id/radio_m4"
+                                android:id="@+id/yadava"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
-                                android:text=" Pedakakani"
+                                android:text="  Yadava"
                                 android:textSize="15dp" />
-
-
+                            <RadioButton
+                                android:id="@+id/muslim"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="  Muslim"
+                                android:textSize="15dp" />
+                            <RadioButton
+                                android:id="@+id/rajaka"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="  Rajaka"
+                                android:textSize="15dp" />
+                            <RadioButton
+                                android:id="@+id/vysya"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="   Vysya"
+                                android:textSize="15dp" />
+                            <RadioButton
+                                android:id="@+id/vaddera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="   Vaddera"
+                                android:textSize="15dp" />
+                            <RadioButton
+                                android:id="@+id/other"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="   Other"
+                                android:textSize="15dp" />
                         </RadioGroup>
 
-
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/f_name_main"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dp"
-                            android:textSize="14dp">
-
-                            <EditText
-                                android:id="@+id/village"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="lato"
-                                android:hint="Village"
-                                android:inputType="text"
-                                android:textSize="15dp" />
-                        </android.support.design.widget.TextInputLayout>
-
                         <Button
-                            android:id="@+id/next_mandal"
+                            android:id="@+id/cast_main"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginRight="20dp"
-                            android:layout_marginTop="15dp"
                             android:background="@color/colorAccent"
                             android:text="@string/next"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
             </LinearLayout>
